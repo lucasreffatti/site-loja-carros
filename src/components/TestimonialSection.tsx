@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, Variants } from "framer-motion";
 import { Star, GoogleLogo } from "@phosphor-icons/react";
 
 const testimonials = [
@@ -34,7 +34,7 @@ const testimonials = [
   }
 ];
 
-const staggerContainer = {
+const staggerContainer: Variants = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
@@ -42,11 +42,11 @@ const staggerContainer = {
   },
 };
 
-const revealItem = {
+const revealItem: Variants = {
   hidden: { opacity: 0, y: 30 },
   visible: { 
     opacity: 1, y: 0,
-    transition: { duration: 0.7, ease: [0.16, 1, 0.3, 1] }
+    transition: { duration: 0.7, ease: [0.16, 1, 0.3, 1] as [number, number, number, number] }
   },
 };
 

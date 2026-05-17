@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, Variants } from "framer-motion";
 import { ShieldCheck, Handshake, Car } from "@phosphor-icons/react";
 
 const stats = [
@@ -10,7 +10,7 @@ const stats = [
 ];
 
 // Stagger container for children
-const staggerContainer = {
+const staggerContainer: Variants = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
@@ -22,20 +22,20 @@ const staggerContainer = {
 };
 
 // Individual item reveal - elegant upward drift
-const revealItem = {
+const revealItem: Variants = {
   hidden: { opacity: 0, y: 40 },
   visible: { 
     opacity: 1, 
     y: 0,
     transition: {
       duration: 0.8,
-      ease: [0.16, 1, 0.3, 1], // Custom smooth easing
+      ease: [0.16, 1, 0.3, 1] as [number, number, number, number], // Custom smooth easing
     }
   },
 };
 
 // Stats counter reveal - slight scale + fade
-const statReveal = {
+const statReveal: Variants = {
   hidden: { opacity: 0, y: 30, scale: 0.95 },
   visible: { 
     opacity: 1, 
@@ -43,7 +43,7 @@ const statReveal = {
     scale: 1,
     transition: {
       duration: 0.7,
-      ease: [0.16, 1, 0.3, 1],
+      ease: [0.16, 1, 0.3, 1] as [number, number, number, number],
     }
   },
 };
